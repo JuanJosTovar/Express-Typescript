@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 
 import register from './routes/register';
 import auth from './routes/auth';
-import usuario from './routes/usuario'
+import usuario from './routes/getVuelos'
 
 import dotenv from "dotenv";
 dotenv.config();
