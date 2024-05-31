@@ -5,16 +5,17 @@ import User from '../Dto/UserDto';
 class UserRepository {
 
     static async add(user: User){
-        const sql = 'INSERT INTO users2 (email, nombres, apellidos, telefono, password, edad, ciudad, pais, documento) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+        const sql = 'INSERT INTO usuarios (email, nombres, apellidos, telefono, password, edad, ciudad, pais, documento) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
         const values = [user.email, user.nombres, user.apellidos, user.telefono, user.password, user.edad, user.ciudad, user.pais, user.documento];
         return db.execute(sql, values);
     }
 
     static async login(auth: Auth){
-        const sql = 'SELECT password FROM users2 WHERE email=?';
+        const sql = 'SELECT password FROM usuarios WHERE email=?';
         const values = [auth.email];
         return db.execute(sql,values)
     }
+    
 }
 
 

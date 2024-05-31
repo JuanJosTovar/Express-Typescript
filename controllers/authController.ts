@@ -1,5 +1,3 @@
-const bcrypt = require("bcryptjs");
-const db = require('../config/config-db.js');
 import { Request, Response} from "express";
 import generateToken from "../helpers/generateToken";
 import Auth from "../Dto/AuthDto";

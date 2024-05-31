@@ -1,9 +1,10 @@
 import express from "express";
-import registerController from '../controllers/register-controller';
+import registerController from '../controllers/registerController';
+import {validatorParams , validator} from '../middleware/register-validator'
 const router = express.Router();
 
 
-router.post('/', registerController);
+router.post('/', validatorParams, validator, registerController);
 
 
 export default router;
